@@ -35,8 +35,12 @@ public class main {
         }else {
             new Alert(Alert.AlertType.INFORMATION,"Customer not update").show();
         }
-
-
+//------- delete---------
+       // Customer customer2 = customerRepository.getData(1);
+        if (customerRepository.delete(1)) {
+      //      new Alert(Alert.AlertType.INFORMATION,"Customer Delete").show();
+            System.out.println("Customer delete");
+        }
 
     }
 

@@ -45,4 +45,19 @@ public class CustomerRepository {
         return session.get(Customer.class,id);
     }
 
+
+    //-------------delete  customer -----------
+    public  boolean delete(Integer id){
+        Customer customer =getData(id);
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.delete(customer);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            return false;
+        }
+    }
+
 }
