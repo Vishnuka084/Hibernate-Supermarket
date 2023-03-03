@@ -27,6 +27,16 @@ public class main {
         }else{
             new Alert(Alert.AlertType.INFORMATION,"Customer not Save").show();
         }
+//-----update-------
+        Customer customer1 = customerRepository.getData(1);
+        customer1.setName(new Cust_name("S","K","G"));
+        if(customerRepository.update(customer1)!=-1){
+            System.out.println(customerRepository.getData(1));
+        }else {
+            new Alert(Alert.AlertType.INFORMATION,"Customer not update").show();
+        }
+
+
 
     }
 

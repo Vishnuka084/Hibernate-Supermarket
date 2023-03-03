@@ -10,8 +10,7 @@ public class CustomerRepository {
 
     private static Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
 
-    //------------save -------------------------
-
+    //------------------------save Customer------------
     public Integer save(Customer customer){
         Transaction transaction = session.beginTransaction();
 
@@ -25,6 +24,25 @@ public class CustomerRepository {
             return -1;
         }
 
+    }
+    //--------------------update customer--------------------------------
+
+    public Integer update(Customer customer){
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.update(customer);
+            transaction.commit();
+            return 1;
+
+        }catch (Exception e){
+            transaction.rollback();
+            return -1;
+        }
+    }
+
+    //--------------getData --------
+    public Customer getData(Integer id){
+        return session.get(Customer.class,id);
     }
 
 }
