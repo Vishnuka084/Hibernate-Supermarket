@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +22,8 @@ public class Task {
     private int id;
     @Column(name = "name")
     private String name;
+    @ManyToMany(mappedBy = "tasks" ,targetEntity = Employee.class)
+    private List<Employee> employees=new ArrayList<>();
 
 
 }

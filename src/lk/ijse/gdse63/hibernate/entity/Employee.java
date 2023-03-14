@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +22,13 @@ public class Employee {
     private int id;
     @Column(name = "name")
     private String name;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "emp_table",
+            joinColumns = @JoinColumn(name = "emp_id"),
+            inverseJoinColumns = @JoinColumn(name = "task_id")
+    )
+    private List<Task>task = new ArrayList<>();
 
 
 }

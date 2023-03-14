@@ -13,15 +13,11 @@ public class FactoryConfiguration {
     private SessionFactory sessionFactory;
 
     private FactoryConfiguration(){
-        Configuration configuration = new Configuration().configure()
-                .addAnnotatedClass(Customer.class)
-                .addAnnotatedClass(Laptop.class)
-                .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Client.class)
-                .addAnnotatedClass(Task.class)
-                .addAnnotatedClass(Employee.class)
-                .addAnnotatedClass(Vehicle.class);
-        sessionFactory = configuration.buildSessionFactory();
+        Configuration configuration=new Configuration().configure().addAnnotatedClass(Customer.class).
+                addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class)
+                .addAnnotatedClass(Client.class).addAnnotatedClass(Vehicle.class).addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Task.class);
+        sessionFactory=configuration.buildSessionFactory();
 
     }
 
