@@ -1,9 +1,7 @@
 package lk.ijse.gdse63.hibernate.util;
 
 
-import lk.ijse.gdse63.hibernate.entity.Customer;
-import lk.ijse.gdse63.hibernate.entity.Laptop;
-import lk.ijse.gdse63.hibernate.entity.Student;
+import lk.ijse.gdse63.hibernate.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -18,7 +16,11 @@ public class FactoryConfiguration {
         Configuration configuration = new Configuration().configure()
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Laptop.class)
-                .addAnnotatedClass(Student.class);
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Client.class)
+                .addAnnotatedClass(Task.class)
+                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Vehicle.class);
         sessionFactory = configuration.buildSessionFactory();
 
     }

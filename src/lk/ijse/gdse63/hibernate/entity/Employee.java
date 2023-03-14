@@ -12,9 +12,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @ToString
-@Entity(name = "task")
-@Table(name = "task")
-public class Task {
+@Entity(name = "employee")
+@Table(name = "employee")
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
