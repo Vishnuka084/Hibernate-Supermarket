@@ -11,7 +11,6 @@ public class main {
     private static final CustomerRepository customerRepository = new CustomerRepository();
 
     public static void main(String[] args) {
-
 //----save------
         Customer c1 = new Customer();
         c1.setName(new Cust_name("Saman","Kumara","Gamage"));
