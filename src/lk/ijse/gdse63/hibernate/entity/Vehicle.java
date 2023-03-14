@@ -21,6 +21,8 @@ public class Vehicle {
     private int id;
     @Column(name = "type")
     private String type;
-
-
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "client_id")
+    @ToString.Exclude
+    private Client client;
 }

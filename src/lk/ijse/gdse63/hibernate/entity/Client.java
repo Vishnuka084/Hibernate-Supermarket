@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,4 +20,6 @@ public class Client {
     private int id ;
     @Column(name = "client_name",length = 120)
     private String name;
+    @OneToMany(mappedBy = "client",targetEntity = Vehicle.class)
+    private List<Vehicle>vehicleList;
 }
