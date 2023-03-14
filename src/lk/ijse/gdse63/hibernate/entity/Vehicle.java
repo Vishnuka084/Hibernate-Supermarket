@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,7 +17,10 @@ import javax.persistence.Table;
 @Table(name = "client")
 public class Vehicle {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
+    @Column(name = "type")
+    private String type;
+
 
 }
